@@ -3261,6 +3261,10 @@ public class MessageHelper {
                 Log.i("--- local by sendmail");
                 return true;
             }
+            if (by.toLowerCase(Locale.ROOT).contains("postfix")) {
+                Log.i("--- local by Postfix");
+                return true;
+            }
             if (by.startsWith("filterdrecv-")) {
                 Log.i("--- local by filterdrecv");
                 return true;
