@@ -210,6 +210,7 @@ public class MessageHelper {
     private static final String GOOGLE_DKIM_SIGNATURE = "X-Google-DKIM-Signature";
     private static final String ARC_SEAL = "ARC-Seal";
     private static final String AUTHENTICATION_RESULTS = "Authentication-Results";
+    private static final String ANON_AUTHENTICATION_RESULTS = "X-AnonAddy-Authentication-Results";
     private static final String ARC_AUTHENTICATION_RESULTS = "ARC-Authentication-Results";
     private static final String ARC_MESSAGE_SIGNATURE = "ARC-Message-Signature";
 
@@ -2223,6 +2224,10 @@ public class MessageHelper {
         String[] results = imessage.getHeader(AUTHENTICATION_RESULTS);
         if (results != null)
             all.addAll(Arrays.asList(results));
+
+        String[] anonresults = imessage.getHeader(ANON_AUTHENTICATION_RESULTS);
+        if (anonresults != null)
+            all.addAll(Arrays.asList(anonresults));
 
         String[] aresults = imessage.getHeader(ARC_AUTHENTICATION_RESULTS);
         if (aresults != null)
