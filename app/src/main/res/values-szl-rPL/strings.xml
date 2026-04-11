@@ -65,7 +65,7 @@
         <item quantity="other">%1$d oczekujących operacji</item>
     </plurals>
     <plurals name="title_notification_unseen">
-        <item quantity="one">%1$d nowa wiadomość</item>
+        <item quantity="one">%1$d Nowa wiadomość</item>
         <item quantity="few">%1$d nowe wiadomości</item>
         <item quantity="many">%1$d nowych wiadomości</item>
         <item quantity="other">%1$d nowych wiadomości</item>
@@ -2151,7 +2151,7 @@
     <string name="title_log_clear">Wyczyść</string>
     <string name="title_rules_search_hint">Szukaj nazwy lub warunku</string>
     <string name="title_rules_export">Eksportuj reguły</string>
-    <string name="title_rules_import">Importuj reguły</string>
+    <string name="title_rules_import" comment="title_rules_import Title of menu item to import rules">Importuj reguły</string>
     <string name="title_rules_delete_all">Usuń wszystkie reguły</string>
     <string name="title_rules_delete_all_confirm">Usunąć wszystkie reguły?</string>
     <string name="title_debug_info">Info debugowania</string>
