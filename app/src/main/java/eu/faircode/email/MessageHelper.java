@@ -925,7 +925,7 @@ public class MessageHelper {
         // https://en.wikipedia.org/wiki/International_email
         for (Address address : addresses) {
             String email = ((InternetAddress) address).getAddress();
-            email = toPunyCode(email, false);
+            email = toPunyCode(email, false, identity != null && identity.unicode);
             ((InternetAddress) address).setAddress(email);
         }
         return addresses;
@@ -2854,7 +2854,7 @@ public class MessageHelper {
             if (email != null) {
                 email = decodeMime(email);
                 email = fromPunyCode(email);
-                email = toPunyCode(email, true);
+                email = toPunyCode(email, true, false);
 
                 iaddress.setAddress(email);
             }
@@ -3643,7 +3643,7 @@ public class MessageHelper {
         return email;
     }
 
-    static String toPunyCode(String email, boolean single) {
+    static String toPunyCode(String email, boolean single, boolean unicode) {
         int at = email.indexOf('@');
         if (at > 0) {
             String user = email.substring(0, at);
@@ -3654,11 +3654,12 @@ public class MessageHelper {
                     TextHelper.isSingleScript(domain))
                 return email;
 
-            try {
-                user = IDN.toASCII(user, IDN.ALLOW_UNASSIGNED);
-            } catch (Throwable ex) {
-                Log.i(ex);
-            }
+            if (!unicode)
+                try {
+                    user = IDN.toASCII(user, IDN.ALLOW_UNASSIGNED);
+                } catch (Throwable ex) {
+                    Log.i(ex);
+                }
 
             String[] parts = domain.split("\\.");
             for (int p = 0; p < parts.length; p++)
