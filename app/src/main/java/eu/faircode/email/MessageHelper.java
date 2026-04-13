@@ -4279,7 +4279,7 @@ public class MessageHelper {
                                 StandardCharsets.US_ASCII.equals(cs) ||
                                 StandardCharsets.ISO_8859_1.equals(cs))
                             result = new String(result.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
-                        result = (first ? "" : "<br><hr>") + Markdown.toHtml(result);
+                        result = (first ? "" : "<br><hr>") + Markdown.toHtml(result, context);
                     } catch (Throwable ex) {
                         Log.e(ex);
                         result = HtmlHelper.formatPlainText(result);
