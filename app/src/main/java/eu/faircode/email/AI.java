@@ -240,7 +240,7 @@ public class AI {
             throw new IllegalArgumentException("No AI available");
 
         String html = Markdown.toHtml(sb.toString(), context);
-        Document doc = HtmlHelper.sanitizeCompose(context, html, false);
+        Document doc = HtmlHelper.sanitizeView(context, JsoupEx.parse(html), false);
         return HtmlHelper.fromDocument(context, doc, null, null);
     }
 }
