@@ -2489,4 +2489,18 @@
             port="465"
             starttls="false" />
     </provider>
+    <provider
+        name="GDWG"
+        domain="gwdg\\.de"
+        link="https://docs.gwdg.de/doku.php?id=en:services:email_collaboration:email_service:pop3_und_imap"
+        user="local">
+        <imap
+            host="email.gwdg.de"
+            port="993"
+            starttls="false" />
+        <smtp
+            host="email.gwdg.de"
+            port="587"
+            starttls="true" />
+    </provider>
 </providers>
