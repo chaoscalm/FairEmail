@@ -913,7 +913,8 @@ You should not change the username!
 
 Note that you can select the default sending address via the three-dots overflow menu at the top right of the message editor (not the start screen!).
 
-**Important**: In the case of an Outlook account, you should first authenticate the account again with the "Office 365" wizard. You don't need to remove the account for this.
+**Important**: In the case of an Outlook (consumer) account, you should first authenticate the account again with the "Outlook/Office" wizard,
+else there will probably the error '... *NoPrimarySmtpAddress* ...'.
 
 **In many cases, an alias address must first be verified via the website of the mail provider**
 
