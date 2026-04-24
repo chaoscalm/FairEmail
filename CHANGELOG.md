@@ -30,6 +30,11 @@ For support you can use [the contact form](https://contact.faircode.eu/?product=
 
 ### Next version (Work in progress)
 
+* Fixed all reported bugs
+* Limit the width of images to the screen width on the receiver side
+* Small improvements and minor bug fixes
+* Updated [CommonMark](https://github.com/commonmark/commonmark-java)
+
 ### 1.2314 2026-03-28
 
 * Fixed all reported bugs
