@@ -2503,4 +2503,17 @@
             port="587"
             starttls="true" />
     </provider>
+    <provider
+        name="Soverin"
+        mx=".*\\.soverin\\.net">
+        link="https://soverin.nl/help/setup">
+        <imap
+            host="imap.soverin.net"
+            port="993"
+            starttls="false" />
+        <smtp
+            host="smtp.soverin.net"
+            port="465"
+            starttls="false" />
+    </provider>
 </providers>
