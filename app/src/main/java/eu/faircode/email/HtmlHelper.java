@@ -3180,17 +3180,6 @@ public class HtmlHelper {
 
                             ssb.append(" \uFFFC"); // Object replacement character
                             ssb.setSpan(new ImageSpan(d), ssb.length() - 1, ssb.length(), 0);
-
-                            if (!TextUtils.isEmpty(BuildConfig.MXTOOLBOX_URI)) {
-                                final String header = received[i];
-                                ClickableSpan click = new ClickableSpan() {
-                                    @Override
-                                    public void onClick(@NonNull View widget) {
-                                        DnsBlockList.show(widget.getContext(), header);
-                                    }
-                                };
-                                ssb.setSpan(click, ssb.length() - 1, ssb.length(), 0);
-                            }
                         }
 
                         ssb.append('\n');
